@@ -52,7 +52,7 @@
     <!-- Camada da imagem que se move com o parallax -->
     <div class="hero-parallax-bg" id="hero-parallax-bg"></div>
     
-    <!-- Camada verde-clara translúcida para manter a leitura do texto -->
+    <!-- Camada translúcida para manter a leitura do texto -->
     <div class="hero-overlay"></div>
 
     <!-- Conteúdo em primeiro plano -->
@@ -70,10 +70,7 @@
     
     <div class="grid-produtos">
       
-      <!-- ============================================================
-           [PRODUTO 1] SABONETE HERBAL
-           Imagem da descrição: ./assets/images/store/natural.soap.png
-           ============================================================ -->
+      <!-- [PRODUTO 1] SABONETE HERBAL -->
       <div class="card-produto" 
            data-nome="Sabonete Herbal" 
            data-preco="24.90" 
@@ -92,13 +89,8 @@
           Adicionar ao Carrinho
         </button>
       </div>
-      <!-- ==================== FIM DO PRODUTO 1 ==================== -->
 
-
-      <!-- ============================================================
-           [PRODUTO 2] SHAMPOO ORGÂNICO
-           Imagem da descrição: ./assets/images/store/pitanga.png
-           ============================================================ -->
+      <!-- [PRODUTO 2] SHAMPOO ORGÂNICO -->
       <div class="card-produto" 
            data-nome="Shampoo Orgânico" 
            data-preco="49.90" 
@@ -117,13 +109,8 @@
           Adicionar ao Carrinho
         </button>
       </div>
-      <!-- ==================== FIM DO PRODUTO 2 ==================== -->
 
-
-      <!-- ============================================================
-           [PRODUTO 3] CREME HIDRATANTE CORPORAL
-           Imagem da descrição: ./assets/images/store/creme.png
-           ============================================================ -->
+      <!-- [PRODUTO 3] CREME HIDRATANTE CORPORAL -->
       <div class="card-produto" 
            data-nome="Creme Hidratante Corporal" 
            data-preco="45.00" 
@@ -142,7 +129,6 @@
           Adicionar ao Carrinho
         </button>
       </div>
-      <!-- ==================== FIM DO PRODUTO 3 ==================== -->
 
     </div>
   </section>
@@ -153,30 +139,20 @@
       <button id="btn-fechar-produto" class="btn-fechar">&times;</button>
       
       <div class="detalhes-container">
-        
-        <!-- ============================================================
-             [IMAGEM DE DESCRIÇÃO DO PRODUTO NO MODAL]
-             Recebe automaticamente a foto do produto clicado (Sabonete, Shampoo ou Creme)
-             ============================================================ -->
         <div class="detalhes-icone" id="detalhes-icone" style="padding: 0; overflow: hidden; height: 190px; border-radius: 12px;">
           <img id="detalhes-imagem" src="" alt="Imagem do Produto" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
-        <!-- =============== FIM DA IMAGEM DE DESCRIÇÃO =============== -->
 
         <div class="detalhes-info">
           <h2 id="detalhes-titulo">Nome do Produto</h2>
           <div class="preco-destaque" id="detalhes-preco">R$ 0,00</div>
           <p class="descricao-produto" id="detalhes-descricao">Descrição detalhada do produto...</p>
 
-          <!-- SELEÇÃO DE OPÇÃO / FRAGRÂNCIA -->
           <div class="campo-grupo">
             <label for="detalhes-opcao" id="label-opcao">Selecione uma opção:</label>
-            <select id="detalhes-opcao">
-              <!-- Opções inseridas via JS -->
-            </select>
+            <select id="detalhes-opcao"></select>
           </div>
 
-          <!-- SELEÇÃO DE QUANTIDADE -->
           <div class="campo-grupo">
             <label>Quantidade:</label>
             <div class="qtd-seletor">
@@ -263,7 +239,6 @@
           </div>
         </div>
 
-        <!-- FORMULÁRIO DE CONTATO -->
         <div class="secao-contacto">
           <h3><i data-lucide="mail"></i> Fale Conosco</h3>
           <p class="subtitulo-contacto">Envie uma mensagem para a nossa equipe.</p>
@@ -295,9 +270,7 @@
       <button id="btn-fechar-carrinho" class="btn-fechar">&times;</button>
     </div>
 
-    <div id="lista-carrinho" class="carrinho-itens">
-      <!-- ITENS INSERIDOS VIA JAVASCRIPT -->
-    </div>
+    <div id="lista-carrinho" class="carrinho-itens"></div>
 
     <div class="carrinho-rodape">
       <div class="total-linha">
@@ -318,10 +291,7 @@
   <!-- SCRIPT PRINCIPAL DA LOJA -->
   <script src="../src/scripts/store.js"></script>
 
-  <!-- ============================================================
-       [SCRIPT DE ATUALIZAÇÃO DA IMAGEM NO MODAL DE DESCRIÇÃO]
-       Substitui o ícone pelo atributo data-imagem de cada produto
-       ============================================================ -->
+  <!-- SCRIPT DE ATUALIZAÇÃO DA IMAGEM NO MODAL DE DESCRIÇÃO -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const cards = document.querySelectorAll('.card-produto');
@@ -345,9 +315,8 @@
       });
     });
   </script>
-  <!-- ================ FIM DO SCRIPT DA IMAGEM ================== -->
 
-  <!-- SCRIPT DO EFEITO PARALLAX -->
+  <!-- SCRIPT DO EFEITO PARALLAX (CORRIGIDO) -->
   <script src="../src/scripts/parallax.js"></script>
 
 </body>

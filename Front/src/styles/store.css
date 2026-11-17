@@ -26,31 +26,84 @@ body {
    2. CABEÇALHO E NAVEGAÇÃO
    ========================================================== */
 header {
-  background-color: #ffffff;
-  padding: 1rem 2.5rem;
+  background:
+    linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.01) 42%,
+      rgba(255, 255, 255, 0.025)
+    ),
+    rgba(8, 24, 13, 0.02);
+  padding: 1rem 3.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  position: sticky;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 0 0 24px 24px;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.28);
+  -webkit-backdrop-filter: blur(2px) saturate(155%);
+  backdrop-filter: blur(2px) saturate(155%);
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
+  isolation: isolate;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse 170px 70px at 22% 30%, rgba(255, 255, 255, 0.2), transparent 72%),
+    radial-gradient(ellipse 120px 52px at 78% 72%, transparent 42%, rgba(255, 255, 255, 0.17) 47%, transparent 56%),
+    radial-gradient(ellipse 95px 40px at 92% 10%, transparent 44%, rgba(255, 255, 255, 0.13) 48%, transparent 55%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    112deg,
+    transparent 14%,
+    rgba(255, 255, 255, 0.1) 28%,
+    transparent 43%,
+    transparent 72%,
+    rgba(255, 255, 255, 0.06) 84%,
+    transparent 94%
+  );
+  pointer-events: none;
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--verde-principal);
+  color: #ffffff;
   letter-spacing: -0.5px;
 }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  background-color: #f7f9f6;
-  padding: 0.4rem 1rem;
-  border-radius: 30px;
+  gap: 0.75rem;
+  background: transparent;
+  padding: 0;
 }
 
 .nav-link {
@@ -58,17 +111,24 @@ nav {
   align-items: center;
   gap: 0.4rem;
   text-decoration: none;
-  color: var(--texto-suave);
+  color: #ffffff;
   font-weight: 500;
-  font-size: 0.95rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
+  font-size: 1rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.035)
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
   transition: all 0.3s ease;
 }
 
 .nav-btn {
-  background: none;
-  border: none;
+  font-family: inherit;
+  font-size: inherit;
   cursor: pointer;
 }
 
@@ -78,8 +138,9 @@ nav {
 }
 
 .nav-link:hover {
-  color: var(--verde-principal);
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
 }
 
 .acoes-header {
@@ -90,14 +151,27 @@ nav {
 
 .btn-carrinho-icon {
   position: relative;
-  background: none;
-  border: none;
-  color: var(--verde-principal);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.035)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  color: #ffffff;
   cursor: pointer;
-  padding: 0.5rem;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-carrinho-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
 }
 
 .btn-carrinho-icon i {
@@ -125,11 +199,16 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: transparent;
-  color: var(--verde-principal);
-  border: 1.5px solid var(--verde-principal);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.035)
+  );
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
   padding: 0.55rem 1.2rem;
-  border-radius: 25px;
+  border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -142,9 +221,10 @@ nav {
 }
 
 .btn-login:hover {
-  background-color: var(--verde-principal);
+  background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(45, 90, 39, 0.2);
+  border-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
 }
 
 /* ==========================================================
@@ -753,4 +833,30 @@ align-items: center;
   object-fit: contain;       /* Enquadra a imagem inteira sem distorcer nem cortar */
   object-position: center;   /* Centraliza o produto */
   padding: 10px;             /* Espaçamento para não encostar na borda */
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .acoes-header {
+    margin-left: auto;
+    gap: 0.5rem;
+  }
 }
